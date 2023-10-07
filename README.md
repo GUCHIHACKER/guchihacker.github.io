@@ -1,1 +1,0 @@
-# guchi.github.io
