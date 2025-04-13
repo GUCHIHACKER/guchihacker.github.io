@@ -1,101 +1,176 @@
-@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
+:root {
+  --primary-color: #4da6ff;
+  --terminal-blue: #66ccff; 
+  --background-overlay: rgba(255, 255, 255, 0.1); 
+  --text-color: #e6f7ff; 
+  --accent-color: #00bfff; 
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-image: url('fondo.gif');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: #ffffff;
-    overflow: hidden;
-  }
-  
-  .profile-card {
-    text-align: center;
-    padding: 50px;
+  font-family: 'Courier New', monospace;
+  margin: 0;
+  padding: 2rem;
+  min-height: 100vh;
+  background: linear-gradient(
+      rgba(70, 130, 180, 0.2), 
+      rgba(100, 180, 255, 0.3)
+    ),
+    url('fondo.gif') center/cover fixed;
+  display: grid;
+  place-items: center;
+  color: var(--text-color);
+  position: relative;
+  overflow: auto;
+}
+
+.profile-container {
+  background: var(--background-overlay);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(100, 200, 255, 0.4);
+  backdrop-filter: blur(8px);
+  max-width: 600px;
+  width: 90%;
+  border: 1px solid rgba(100, 200, 255, 0.2);
+}
+
+.profile-card {
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+}
+
+.profile-card img {
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  border: 3px solid var(--primary-color);
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(77, 166, 255, 0.5);
+}
+
+.profile-card img:hover {
+  transform: scale(1.05);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 20px rgba(0, 191, 255, 0.7);
+}
+
+.terminal-prefix {
+  display: inline-block;
+  font-family: monospace;
+  animation: typing 3s steps(20), blink-caret 0.75s step-end infinite;
+  border-right: 2px solid var(--terminal-blue);
+  white-space: nowrap;
+  overflow: hidden;
+  text-shadow: 0 0 5px rgba(102, 204, 255, 0.7);
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  color: var(--text-color);
+}
+
+.red-team {
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.social-links a {
+  color: var(--terminal-blue);
+  font-size: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  text-decoration: none;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-links a:hover {
+  color: var(--accent-color);
+  transform: translateY(-5px);
+  text-shadow: 0 0 10px rgba(0, 191, 255, 0.7);
+}
+
+.social-links a::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--terminal-blue);
+  border-radius: 50%;
+  transform: scale(0.9);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover::before {
+  transform: scale(1.1);
+  opacity: 1;
+  border-color: var(--accent-color);
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 2rem;
+  background: var(--primary-color);
+  color: #002b4d !important;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  box-shadow: 0 0 10px rgba(77, 166, 255, 0.5);
+}
+
+.cta-button:hover {
+  background: transparent;
+  border-color: var(--accent-color);
+  color: var(--accent-color) !important;
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.7);
+  transform: translateY(-2px);
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--terminal-blue) }
+}
+
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 1.5rem;
+    backdrop-filter: blur(5px);
   }
   
   .profile-card img {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    margin-bottom: 20px;
+    width: 140px;
+    height: 140px;
   }
   
-  .profile-card h1 {
-    font-size: 2em;
-    margin-bottom: 10px;
+  .social-links {
+    gap: 1.2rem;
   }
   
-  .profile-card p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-  } 
-  .footer-social-links{
-      font-size: 15px;
-    text-align: center;
-    margin-top: 10%;
+  .social-links a {
+    font-size: 1.8rem;
   }
-  .footer-social-links a{
-      width: 50px;
-      height: 50px;
-      line-height: 50px !important;
-      position: relative;
-      margin: 0 50px;
-      text-align: center;
-      display: inline-block;
-      color: #ffffff;
-      
-      -webkit-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);  
-      -moz-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000); 
-      -o-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-      -ms-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000); 
-      transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-  }
-  .footer-social-links a i,
-  .footer-social-links a span{
-      position: relative;
-      top: 2px;
-      left: 1px; 
-  }
-  .footer-social-links a:before{
-      content: "";
-      display: inline-block;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      border: 1px solid #ffffff;
-      width: 50px;
-      height: 50px;
-      
-      -webkit-border-radius: 2px;
-      -moz-border-radius: 2px;
-      border-radius: 2px;
-      
-      -webkit-transform: rotate(45deg);
-      -moz-transform: rotate(45deg);
-      -o-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-      transform: rotate(45deg);
-      
-      -webkit-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);  
-      -moz-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000); 
-      -o-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-      -ms-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000); 
-      transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
-      
-  }
-  .footer-social-links a:hover{
-      color: #000000;
-  }
-  .footer-social-links a:hover:before{
-      background: #ffffff;
-  }
+}
