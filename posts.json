@@ -1,0 +1,4 @@
+[
+  { "slug": "moodle-ssrf-ipv4-mapped-ipv6", "title": "Moodle SSRF blocklist bypass via IPv4-mapped IPv6 addresses", "date": "2026-11-01", "tags": ["research", "moodle"] },
+  { "slug": "rce-in-obsidian-via-iframe", "title": "RCE in Obsidian via iframe Protocol Handler and Extension Filter Bypass", "date": "2026-11-02", "tags": ["research", "obsidian"] }
+]
