@@ -342,7 +342,7 @@ That's it, you now have a blind SSRF in the latest version of OwnCloud, to an an
 - **2026-02-16** — Reported to OwnCloud via YesWeHack
 - **2026-02-27** — Report marked as "out of scope" because it is a blind SSRF
 - **2026-02-27** — Ask if a CVE could be assigned to this vulnerability (Ignored)
-- **2026-11-06** — Confirmed the chain vuln works on OwnCloud 11.1.0, public disclosure
+- **2026-11-06** — Confirmed the vuln works on OwnCloud 11.1.0, public disclosure
 
 Once again, the vendor or the triager responsible for handling vulnerability reports is refusing (ignoring the message) to assign a CVE, and the vulnerability isn't even being fixed. Don't ask me why, beacuse I have no idea.
 
