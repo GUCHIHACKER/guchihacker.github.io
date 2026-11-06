@@ -1,4 +1,5 @@
 [
   { "slug": "moodle-ssrf-ipv4-mapped-ipv6", "title": "Moodle SSRF blocklist bypass via IPv4-mapped IPv6 addresses", "date": "2026-11-01", "tags": ["research", "moodle"] },
-  { "slug": "rce-in-obsidian-via-iframe", "title": "RCE in Obsidian via iframe Protocol Handler and Extension Filter Bypass", "date": "2026-11-02", "tags": ["research", "obsidian"] }
+  { "slug": "rce-in-obsidian-via-iframe", "title": "RCE in Obsidian via iframe Protocol Handler and Extension Filter Bypass", "date": "2026-11-02", "tags": ["research", "obsidian"] },
+  { "slug": "owncloud-unauthenticated-blind-ssrf", "title": "OwnCloud unauthenticated Blind-SSRF Unpatched", "date": "2026-11-06", "tags": ["research", "owncloud"] }
 ]
